@@ -69,6 +69,8 @@ public class Character {
         if (m_hp <= 0) {
             m_hp = 0;
         }
+
+        System.out.println(m_name + "のHPは現在" + m_hp + "です!");
     }
 
     // 回復をされて際の関数
@@ -82,11 +84,14 @@ public class Character {
         if (m_hp >= m_maxHp) {
             m_hp = m_maxHp;
         }
+
+        System.out.println(m_name + "のHPは現在" + m_hp + "です!");
     }
 
     // 生死判定
     public boolean isDead() {
         if (m_hp <= 0) {
+            System.out.println(m_name + "は倒れてしまいました・・・");
             return true;
         } else {
             return false;

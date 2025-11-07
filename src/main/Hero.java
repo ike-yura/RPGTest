@@ -48,4 +48,11 @@ public class Hero extends Character {
         m_hp = m_maxHp; // 全回復
         System.out.println(getName() + "はレベル" + m_level + "に上がった！");
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[%s] Lv:%d HP:%d/%d ATK:%d DEF:%d EXP:%d",
+                m_name, m_level, m_hp, m_maxHp, m_attack, m_defense, m_exp);
+    }
 }

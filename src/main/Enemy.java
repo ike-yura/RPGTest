@@ -35,4 +35,11 @@ public class Enemy extends Character {
         System.out.println(getName() + "の攻撃！（敵専用メッセージ）");
         super.attack(target); // 親クラスの攻撃処理を呼ぶ
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[%s] HP:%d/%d ATK:%d DEF:%d EXP報酬:%d GOLD報酬:%d",
+                m_name, m_hp, m_maxHp, m_attack, m_defense, m_expReward, m_goldReward);
+    }
 }

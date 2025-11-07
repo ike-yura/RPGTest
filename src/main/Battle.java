@@ -31,7 +31,7 @@ public class Battle {
 
         while (true) {
             System.out.println("\n===" + l_turn + "ターン目 ===");
-
+            showStatus();
             m_attacker.attack(m_defender);
             // 防御側の判定
             if (m_defender.isDead()) {
@@ -52,5 +52,14 @@ public class Battle {
             // ターンの加算
             l_turn++;
         }
+    }
+
+    // ターンごとのステータス表示
+    private void showStatus() {
+        System.out.println("===ステータス表示===");
+        System.out.println(m_attacker);
+        System.out.println("===ここで区切り===");
+        System.out.println(m_defender);
+        System.out.println("===ステータス表示終了===\n");
     }
 }

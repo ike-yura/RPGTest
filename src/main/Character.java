@@ -6,11 +6,11 @@ package main;
  */
 public class Character {
     // メンバ変数
-    private String m_name; // 名前
-    private int m_maxHp; // 最大HP
-    private int m_hp; // 現在HP
-    private int m_attack; // 攻撃力
-    private int m_defense; // 防御力
+    protected String m_name; // 名前
+    protected int m_maxHp; // 最大HP
+    protected int m_hp; // 現在HP
+    protected int m_attack; // 攻撃力
+    protected int m_defense; // 防御力
 
     // コンストラクタ
     public Character(String name, int maxHp, int attack, int defense) {

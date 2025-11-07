@@ -36,6 +36,12 @@ public class Battle {
             // 防御側の判定
             if (m_defender.isDead()) {
                 System.out.println(m_attacker.getName() + "の勝利！");
+
+                if (m_attacker instanceof Hero && m_defender instanceof Enemy) {
+                    Hero hero = (Hero) m_attacker;
+                    Enemy enemy = (Enemy) m_defender;
+                    hero.gainExp(enemy.getExpReward());
+                }
                 break;
             }
 

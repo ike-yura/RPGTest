@@ -107,7 +107,14 @@ public class Character {
         System.out.println(m_name + "の攻撃!");
 
         // 攻撃先のダメージ判定
-        target.takeDamage(m_attack);
+        int l_damage;
+        l_damage = m_attack - target.getDefense();
+
+        if (l_damage <= 1) {
+            l_damage = 1;
+        }
+
+        target.takeDamage(l_damage);
     }
 
     @Override

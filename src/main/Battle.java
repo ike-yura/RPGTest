@@ -24,4 +24,27 @@ public class Battle {
         m_attacker.attack(m_defender);
         m_defender.isDead();
     }
+
+    // 戦闘のループ処理
+    public void startBattleLoop() {
+        int l_turn = 1; // ターン数
+
+        while (true) {
+            System.out.println("\n===" + l_turn + "ターン目 ===");
+
+            m_attacker.attack(m_defender);
+            // 防御側の判定
+            if (m_defender.isDead()) {
+                System.out.println(m_attacker.getName() + "の勝利！");
+                break;
+            }
+
+            // 攻撃側と防御側を入れ替える
+            Character temp = m_attacker;
+            m_attacker = m_defender;
+            m_defender = temp;
+            // ターンの加算
+            l_turn++;
+        }
+    }
 }

@@ -8,6 +8,6 @@ public class Main {
 
         Battle battle = new Battle(hero, slime);
 
-        battle.startBattleOnce();
+        battle.startBattleLoop();
     }
 }

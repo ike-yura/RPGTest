@@ -2,11 +2,11 @@ package main;
 
 public class Battle {
     // キャラクター
-    private Character m_attacker;
-    private Character m_defender;
+    private CharacterBase m_attacker;
+    private CharacterBase m_defender;
 
     // コンストラクタ
-    public Battle(Character attacker, Character defender) {
+    public Battle(CharacterBase attacker, CharacterBase defender) {
         if (attacker == null) {
             throw new IllegalArgumentException("attackerがnullです");
         }
@@ -46,7 +46,7 @@ public class Battle {
             }
 
             // 攻撃側と防御側を入れ替える
-            Character temp = m_attacker;
+            CharacterBase temp = m_attacker;
             m_attacker = m_defender;
             m_defender = temp;
             // ターンの加算

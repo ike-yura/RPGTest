@@ -1,6 +1,6 @@
 package main;
 
-public class Hero extends Character {
+public class Hero extends CharacterBase {
     // メンバ変数
     int m_level;
     int m_exp;
@@ -47,6 +47,11 @@ public class Hero extends Character {
         m_defense += l_addDefense;
         m_hp = m_maxHp; // 全回復
         System.out.println(getName() + "はレベル" + m_level + "に上がった！");
+    }
+
+    @Override
+    protected void beforeAttackMessage() {
+        System.out.println(getName() + "は勇敢に剣を振るった！");
     }
 
     @Override

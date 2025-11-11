@@ -1,6 +1,6 @@
 package main;
 
-public class Enemy extends Character {
+public class Enemy extends CharacterBase {
 
     private final int m_expReward;
     private final int m_goldReward;
@@ -31,9 +31,7 @@ public class Enemy extends Character {
     }
 
     @Override
-    public void attack(Character target) {
-        System.out.println(getName() + "の攻撃！（敵専用メッセージ）");
-        super.attack(target); // 親クラスの攻撃処理を呼ぶ
+    protected void beforeAttackMessage() {
     }
 
     @Override

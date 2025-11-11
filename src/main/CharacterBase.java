@@ -1,10 +1,6 @@
 package main;
 
-/**
- * RPG内のキャラクターを表すクラス。
- * 名前・HP・攻撃力・防御力を持ち、HP管理を担当する。
- */
-public class Character {
+public abstract class CharacterBase {
     // メンバ変数
     protected String m_name; // 名前
     protected int m_maxHp; // 最大HP
@@ -12,8 +8,7 @@ public class Character {
     protected int m_attack; // 攻撃力
     protected int m_defense; // 防御力
 
-    // コンストラクタ
-    public Character(String name, int maxHp, int attack, int defense) {
+    public CharacterBase(String name, int maxHp, int attack, int defense) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("nameがnullまたは空白です");
         }
@@ -99,12 +94,15 @@ public class Character {
     }
 
     // 攻撃判定
-    public void attack(Character target) {
+    public final void attack(CharacterBase target) {
         if (target == null) {
             throw new IllegalArgumentException("targetがnullです");
         }
 
         System.out.println(m_name + "の攻撃!");
+
+        // サブクラスの演出
+        beforeAttackMessage();
 
         // 攻撃先のダメージ判定
         int l_damage;
@@ -115,6 +113,13 @@ public class Character {
         }
 
         target.takeDamage(l_damage);
+    }
+
+    // ↓サブクラスでの独自処理
+    protected void beforeAttackMessage() {
+    }
+
+    protected void afterAttackMessage() {
     }
 
     @Override
